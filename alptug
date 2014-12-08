@@ -1,0 +1,32 @@
+#!/usr/bin/python
+from IP import *
+import os
+def main(): 
+    
+    nymph_global  = nymph(alptug)
+    user_name = nymph_global.myN.NAME 
+    
+    print user_name + ' nymph is ready' 
+    while 1:
+        print '1 => ' + user_name +' say something to erdem'
+        print '2 => ' + user_name +' say something to ferhat'
+        print '3 => exit'
+        print '4 => clear'
+        number = raw_input('Choose : ').strip()
+        if number == '1':
+            message = raw_input(user_name + ' said : ').strip()
+            nymph_global.talkWith(erdem)
+            nymph_global.say(message)
+        elif number == '2':
+            message = raw_input(user_name + ' said : ').strip()
+            nymph_global.talkWith(ferhat)
+            nymph_global.say(message)
+        elif number == '3':
+            exit()
+        elif number == '4':
+            os.system('clear')    
+        else:
+            print 'You should choose 1, 2, 3 or 4'
+
+if __name__ == '__main__':
+   main()
